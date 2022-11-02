@@ -2,16 +2,18 @@ import os
 import shutil
 list_dirs=[]
 index_dirs=0
-path="C:/Users/Adeo/Downloads"
+path=input("Dosyaların aranacagı dizini girin:")
+path=path.replace("\\","/")
 for root, dirs, files in os.walk(path, topdown=False):
    for name in dirs:
       i=os.path.join(root, name)
       i=i.replace("\\","/")
       list_dirs.insert(index_dirs,i)
       index_dirs=index_dirs+1
-dest="C:/Users/Adeo/OneDrive - ADEO/Desktop/kopyala"
+dest=input("Hedef:")
+dest=dest.replace("\\","/")
+print(dest)
 ara=input("Alınacak dosya adı:")
-#print(list_dirs)
 kopya_list=[]
 index=0
 for i in list_dirs:
